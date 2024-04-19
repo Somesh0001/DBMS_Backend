@@ -1,9 +1,11 @@
 import express from "express";
 import ErrorMiddleWare from "./middleware/Error.js";
 import pool from "./config/dbConfig.js";
+import cors from "cors";
 
 const app = express();
 app.use(express.json());
+app.use(cors());
 app.use(
   express.urlencoded({
     extended: true,
